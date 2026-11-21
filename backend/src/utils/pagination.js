@@ -1,0 +1,9 @@
+function escapeRegex(text) {
+  return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function buildPageMeta(page, limit, total) {
+  return { page, limit, total, totalPages: Math.max(1, Math.ceil(total / limit)) };
+}
+
+module.exports = { escapeRegex, buildPageMeta };
